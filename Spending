@@ -1,0 +1,20 @@
+import pandas as pd
+
+# Simulated transaction data
+transactions = pd.DataFrame({
+    "Date": ["2024-11-20", "2024-11-21"],
+    "Category": ["Groceries", "Entertainment"],
+    "Amount": [120, 250]
+})
+
+# Define a spending threshold
+spending_threshold = 200
+
+# Check for overspending
+def check_overspending(transactions, threshold):
+    for _, row in transactions.iterrows():
+        if row["Amount"] > threshold:
+            print(f"Alert: Overspending detected in {row['Category']} - Amount: {row['Amount']}")
+
+# Example usage
+check_overspending(transactions, spending_threshold)
